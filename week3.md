@@ -72,23 +72,10 @@ import sys
 #
 
 def birthday(s, d, m):
-    # Write your code here
     count = 0
-    n = len(s)
-    
-    # Compute the sum of the first window
-    current_sum = sum(s[:m])
-    
-    # Check if the first window sum matches d
-    if current_sum == d:
-        count += 1
-    
-    # Slide the window from start to end
-    for i in range(m, n):
-        current_sum = current_sum + s[i] - s[i - m]
-        if current_sum == d:
+    for i in range(len(s) - m + 1):
+        if sum(s[i:i + m]) == d:
             count += 1
-    
     return count
 
 if __name__ == '__main__':
@@ -141,18 +128,15 @@ import sys
 
 def sockMerchant(n, ar):
     # Write your code here
-    stck_count = {}
-    pairs = 0
-    
+    stck_count={}
+    pairs=0
     for stack in ar:
         if stack in stck_count:
-            stck_count[stack] += 1
+            stck_count[stack]+=1
         else:
-            stck_count[stack] = 1
-
-    for count in stck_count.values():
-        pairs += count // 2  # Count how many pairs can be made from the socks
-
+            stck_count[stack]=1
+    for key,values in stck_count.items():
+       pairs+=values//2
     return pairs
 
 if __name__ == '__main__':
@@ -184,20 +168,14 @@ import sys
 
 def migratoryBirds(arr):
     # Write your code here
-    bird_count = {}
-
-    # Count each bird type in the array
-    for bird in arr:
-        bird_count[bird] = bird_count.get(bird, 0) + 1
-
-    # Get the maximum frequency
-    max_count = max(bird_count.values())
-
-    # Find bird IDs with the maximum frequency
-    most_frequent_birds = [bird for bird, count in bird_count.items() if count == max_count]
-
-    # Return the smallest bird ID among the most frequent ones
-    return min(most_frequent_birds)
+    bird_count={}
+    for i in arr:
+        if i in bird_count:
+            bird_count[i]+=1
+        else:
+            bird_count[i]=1
+    max_count=max(bird_count.values())
+    return min([bird for bird , count in bird_count.items() if count==max_count ] ) 
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
