@@ -87,6 +87,25 @@ if __name__ == '__main__':
     fptr.close()
 ```
 ## 3 Number Line Jumps
+**The problem you're dealing with involves two kangaroos on a number line. Each kangaroo starts at a specific position and jumps forward a certain distance with each jump. You need to determine if there is a point where both kangaroos will land on the same position at the same time after making the same number of jumps.
+
+### Goal:
+You need to check if there exists a non-negative integer `n` such that:
+\[ x1 + n \times v1 = x2 + n \times v2 \]
+
+Simplifying the equation:
+\[ x1 - x2 = n \times (v2 - v1) \]
+
+This can be further simplified to:
+\[ n = \frac{x1 - x2}{v2 - v1} \]
+
+### Conditions for YES:
+
+1. **Divisibility:** For `n` to be an integer (number of jumps), the difference `(x1 - x2)` must be divisible by `(v2 - v1)`.
+  
+2. **Positive n:** The number of jumps `n` must be non-negative, i.e., `n >= 0`.**
+
+
 
 ```python
 #!/bin/python3
