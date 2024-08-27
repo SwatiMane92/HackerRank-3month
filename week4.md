@@ -302,11 +302,11 @@ def minimumAbsoluteDifference(arr):
     arr.sort()  # Step 1: Sort the array
     min_diff = float('inf')  # Initialize to a very large number
     
-    for i in range(1, len(arr)):
-        diff = abs(arr[i] - arr[i - 1])  # Step 2: Find difference between consecutive elements
+    for i in range(1, len(arr)-1):
+        diff = abs(arr[i+1] - arr[i])  # Step 2: Find difference between consecutive elements
         min_diff = min(min_diff, diff)  # Update minimum difference if the current one is smaller
     
-    return min_diff 
+    return min_diff
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
