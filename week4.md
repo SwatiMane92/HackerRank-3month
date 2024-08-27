@@ -91,13 +91,13 @@ The problem you're dealing with involves two kangaroos on a number line. Each ka
 
 ### Goal:
 You need to check if there exists a non-negative integer `n` such that:
-\[ x1 + n \times v1 = x2 + n \times v2 \]
+ x1 + n  v1 = x2 + n v2 
 
 Simplifying the equation:
-\[ x1 - x2 = n \times (v2 - v1) \]
+ x1 - x2 = n (v2 - v1) 
 
 This can be further simplified to:
-\[ n = \frac{x1 - x2}{v2 - v1} \]
+ n = {x1 - x2}/{v2 - v1} 
 
 ### Conditions for YES:
 
