@@ -318,6 +318,15 @@ if __name__ == '__main__':
 ```
 
 ## 8 Caesar Cipher
+### Example:
+If `char = 'b'`, `k = 3`, and `shift = ord('a')`:
+- `ord('b') - ord('a') = 98 - 97 = 1` (position of 'b' is 1).
+- Add `k`: `1 + 3 = 4` (move 3 positions to the right).
+- `% 26` keeps it within the alphabet (though it's not needed here as 4 is already within the range).
+- `4 + ord('a') = 4 + 97 = 101`.
+- `chr(101)` gives `'e'`.
+
+So, `'b'` shifted by 3 positions becomes `'e'`.
 
 ```python
 #!/bin/python3
