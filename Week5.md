@@ -21,6 +21,7 @@ import sys
 #
 
 def maxMin(k, arr):
+   def maxMin(k, arr):
     # Step 1: Sort the array
     arr.sort()
     
@@ -30,8 +31,7 @@ def maxMin(k, arr):
     # Step 3: Slide over the sorted array to find the minimum difference
     for i in range(len(arr) - k + 1):
         unfairness = arr[i + k - 1] - arr[i]
-        if unfairness < min_unfairness:
-            min_unfairness = unfairness
+        min_unfairness=min(min_unfairness, unfairness)
     
     # Step 4: Return the minimum unfairness
     return min_unfairness
