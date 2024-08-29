@@ -107,7 +107,7 @@ import sys
 #
 
 def flippingBits(n):
-    # Write your code here
+    return n ^ 0xFFFFFFFF
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
