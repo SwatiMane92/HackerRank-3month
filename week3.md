@@ -189,22 +189,16 @@ if __name__ == '__main__':
 ## 6 Zig Zag Sequence
 
 ```python
-def findZigZagSequence(a, n):
-    a.sort()  # Step 1: Sort the array
-    mid = (n - 1) // 2  # Step 2: Correctly calculate the mid index
-    
+    a.sort()  # Sort the array
+    mid = (n - 1) // 2  # Find the middle index
+
     # Swap the middle element with the last element
     a[mid], a[n - 1] = a[n - 1], a[mid]
-    
-    # Reverse the second half of the array
-    st = mid + 1
-    ed = n - 2  # Correct end index for the reverse operation
-    while st <= ed:
-        a[st], a[ed] = a[ed], a[st]
-        st += 1
-        ed -= 1
-    
-    # Print the result with proper formatting
+
+    # Reverse the elements after the middle to get the zigzag pattern
+    a[mid + 1:] = reversed(a[mid + 1:])
+
+    # Print the zigzag sequence
     print(' '.join(map(str, a)))
 
 # Read input and process each test case
