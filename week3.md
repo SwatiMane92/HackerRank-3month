@@ -77,6 +77,26 @@ def birthday(s, d, m):
         if sum(s[i:i + m]) == d:
             count += 1
     return count
+##OR
+def birthday(s, d, m):
+#     # Write your code here
+#     count = 0
+#     n = len(s)
+    
+#     # Compute the sum of the first window
+#     current_sum = sum(s[:m])
+    
+#     # Check if the first window sum matches d
+#     if current_sum == d:
+#         count += 1
+    
+#     # Slide the window from start to end
+#     for i in range(m, n):
+#         current_sum = current_sum + s[i] - s[i - m]
+#         if current_sum == d:
+#             count += 1
+    
+#     return count
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
