@@ -209,7 +209,7 @@ if __name__ == '__main__':
 ## 6 Zig Zag Sequence
 
 ```python
-  def findZigZagSequence(a, n):
+def findZigZagSequence(a, n):
     a.sort()
     mid = int((n - 1)//2)
     a[mid], a[n-1] = a[n-1], a[mid]
@@ -233,9 +233,6 @@ for cs in range (test_cases):
     n = int(input())
     a = list(map(int, input().split()))
     findZigZagSequence(a, n)
-
-
-
 
 ```
 ## 7 tringle perimeter
