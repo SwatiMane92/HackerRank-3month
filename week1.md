@@ -297,6 +297,30 @@ def matchingStrings(strings, queries):
         result.append(count)
     return result
 
+## OR
+#def matchingStrings(strings, queries):
+#     # Write your code here
+#     # Create a dictionary to store the frequency of each string in the input list
+#     frequency_dict = {}
+    
+#     # Populate the dictionary with counts of each string
+#     for s in strings:
+#         if s in frequency_dict:
+#             frequency_dict[s] += 1
+#         else:
+#             frequency_dict[s] = 1
+    
+#     # Prepare the result list for each query
+#     results = []
+    
+#     # For each query, retrieve the count from the dictionary (default to 0 if not found)
+#     for query in queries:
+#         count = frequency_dict.get(query, 0)
+#         results.append(count)
+    
+#     return results
+
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
