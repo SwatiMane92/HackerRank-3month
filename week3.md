@@ -209,24 +209,34 @@ if __name__ == '__main__':
 ## 6 Zig Zag Sequence
 
 ```python
-    a.sort()  # Sort the array
-    mid = (n - 1) // 2  # Find the middle index
+  def findZigZagSequence(a, n):
+    a.sort()
+    mid = int((n - 1)//2)
+    a[mid], a[n-1] = a[n-1], a[mid]
 
-    # Swap the middle element with the last element
-    a[mid], a[n - 1] = a[n - 1], a[mid]
+    st = mid + 1
+    ed = n - 2
+    while(st <= ed):
+        a[st], a[ed] = a[ed], a[st]
+        st = st + 1
+        ed = ed - 1
 
-    # Reverse the elements after the middle to get the zigzag pattern
-    a[mid + 1:] = reversed(a[mid + 1:])
+    for i in range (n):
+        if i == n-1:
+            print(a[i])
+        else:
+            print(a[i], end = ' ')
+    return
 
-    # Print the zigzag sequence
-    print(' '.join(map(str, a)))
-
-# Read input and process each test case
 test_cases = int(input())
-for cs in range(test_cases):
+for cs in range (test_cases):
     n = int(input())
     a = list(map(int, input().split()))
     findZigZagSequence(a, n)
+
+
+
+
 ```
 ## 7 tringle perimeter
 ```python
